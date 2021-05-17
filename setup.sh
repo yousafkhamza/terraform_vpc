@@ -54,7 +54,12 @@ else
 	sed -ie "s|-VPCCIDR-|"$vcidr"|g" ./terraform.tfvars
 fi
 echo ""
-echo "..................Creating Infrastructure..................."
+echo "Creating Infrastructure..................."
+echo "...................................."
+echo "............................."
+echo ".................."
+echo "......."
+sleep 1
 echo ""
 #Setup Terrafrom under the current working directory
 if [ -d .terraform ]; then 
@@ -86,9 +91,11 @@ case "$con2" in
 yes|YES|y|Y)
 terraform validate
 echo ""
-echo "Validation is successfull"
-echo "Lets run the terraform plan......"
-sleep 2
+echo "Validation is successfull."
+echo""
+sleep 1
+echo "Let's run the terraform plan......"
+sleep 1
 terraform plan
 ;;
 esac
@@ -98,16 +105,16 @@ read -p 'Do you need to apply the values to your infrastructure [y/N]:' con3
 case "$con3" in 
 yes|YES|y|Y)
 terraform apply -auto-approve
-sleep 3
+sleep 2
 echo ""
-echo "Your VPC created successfully......................"
+echo "Your VPC created successfull......................"
 echo ""
 echo "................Thank_you................"
 echo "..............Yousaf K Hamza................"
 echo "..........yousaf.k.hamza@gmail.com................"
 ;;
 *)
-echo "Please re-run the file or manualy handled through terraform commands"
+echo "Please re-run the setup file or manualy handled through terraform"
 exit
 ;;
 esac
