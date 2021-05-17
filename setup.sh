@@ -55,14 +55,17 @@ else
 fi
 echo ""
 echo "Creating Infrastructure..................."
+sleep 1
 echo "...................................."
 echo "............................."
+sleep 1
 echo ".................."
 echo "......."
 sleep 1
 echo ""
 #Setup Terrafrom under the current working directory
-if [ -d .terraform ]; then 
+if [[ -d .terraform ]]; then 
+	echo ""
 	echo "Terrafrom is already installed"
 else
 read -p 'Do you want to install Terraform on this current directory [y/N]:' con1
@@ -81,7 +84,9 @@ echo ""
 terraform init
 ;;
 *)
+	ehco ""
 	echo "Please re-run the script or install terraform manually"
+	exit 1
 ;; 
 esac
 fi
