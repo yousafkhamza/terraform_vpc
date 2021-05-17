@@ -1,6 +1,8 @@
 #!/bin/sh 
 #terrform variable setting through customer input
 echo "#############VPC CREATION THROUGH TERRAFORM##############"
+echo ""
+echo ""
 rm -f ./terraform.tfvars
 
 cat <<EOF >terraform.tfvars
@@ -51,6 +53,8 @@ else
 	sed -ie "s|-VPCCIDR-|"$vcidr"|g" ./terraform.tfvars
 fi
 
+echo "#..................Creating Infrastructure......................"
+echo ""
 #Setup Terrafrom under the current working directory
 if [[ -d .terraform ]]; then 
 	echo "Terrafrom is already installed"
@@ -62,14 +66,17 @@ unzip terraform*.zip 2>&1
 mv terraform /usr/bin/
 
 echo "Terraform downloading completed...................."
+echo ""
 sleep 2
 echo "start to connect provider.tf to terraform.........."
+echo ""
 terraform init
 else 
-	echo "Please re-run the script or install terraform"
+	echo "Please re-run the script or install terraform manually"
 fi
 fi
 
+echo ""
 read -p 'Do you need to validate our VPC script with your mentioned values [y/N]:' con2
 if [[ "$con2" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
 terraform validate
@@ -78,11 +85,13 @@ sleep 3
 terraform plan
 fi
 
+echo ""
 read -p 'Do you need to apply the script to your infrastructure [y/N]:' con3
 if [[ "$con3" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
 terraform apply -auto-approve
 sleep 3
-echo "Your VPC is created"
+echo ""
+echo "Your VPC infrastructure completed"
 else
 echo "Please re-run the file or manualy handled through terraform commands"
 exit
