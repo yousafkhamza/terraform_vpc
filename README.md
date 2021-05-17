@@ -32,7 +32,7 @@ sh setup.sh
 
 # Behind the script
 # Terraform Installation and VPC creation code and explanation :
-##### please note that you can use the steps to make a vpc through terraform manually
+> ##### please note that you can use the steps to make a vpc through terraform manually
 
 If you need to download terraform (Manually), then click here [Terraform](https://www.terraform.io/downloads.html) .
 
