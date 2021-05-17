@@ -16,7 +16,7 @@ It's simply created a VPC through terraform. This terrafrom (iaac) code is used 
 - Knowledge to the working principles of each AWS services especially VPC, EC2 and IP Subnetting.
 ### How to use
 ```sh
-yum install git -y
+yum install git unzip -y
 git clone https://github.com/ykhsupport/terraform_vpc.git
 cd terraform_vpc
 chmod +x setup.sh
