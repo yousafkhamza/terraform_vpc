@@ -81,28 +81,30 @@ esac
 fi
 
 echo ""
-read -p 'Do you need to validate our VPC script with your mentioned values [y/N]:' con2
+read -p 'Do you need to run terraform validate with your mentioned values [y/N]:' con2
 case "$con2" in 
 yes|YES|y|Y)
 terraform validate
-echo "Your current values with -terrafrom plan- result is below:"
-sleep 3
+echo ""
+echo "Validation is successfull"
+echo "Lets run the terraform plan......"
+sleep 2
 terraform plan
 ;;
 esac
 
 echo ""
-read -p 'Do you need to apply the script to your infrastructure [y/N]:' con3
+read -p 'Do you need to apply the values to your infrastructure [y/N]:' con3
 case "$con3" in 
 yes|YES|y|Y)
 terraform apply -auto-approve
 sleep 3
 echo ""
-echo "Your VPC created successfully............"
+echo "Your VPC created successfully......................"
 echo ""
 echo "................Thank_you................"
-echo "................Yousaf K Hamza................"
-echo "................yousaf.k.hamza@gmail.com................"
+echo "..............Yousaf K Hamza................"
+echo "..........yousaf.k.hamza@gmail.com................"
 ;;
 *)
 echo "Please re-run the file or manualy handled through terraform commands"
