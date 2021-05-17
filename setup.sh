@@ -2,7 +2,7 @@
 #terrform variable setting through customer input
 echo ""
 echo "..................Welcome to the Script.................."
-echo ".Let's start to create a complete VPC through Terraform."
+echo "Let's start to create a complete VPC through Terraform...."
 echo ""
 rm -f ./terraform.tfvars
 
