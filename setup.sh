@@ -14,6 +14,9 @@ project 	= "-PROJECTNAME-"
 vpc_cidr 	= "-VPCCIDR-"
 EOF
 
+if [[ -d .terraform ]]; then 
+	echo "Provider values are already configured."
+else
 read -p "Please specify your region: " reg 
 if [ -z $reg  ]; then
 echo "No region value entered"
@@ -53,6 +56,8 @@ exit 1
 else
 	sed -ie "s|-VPCCIDR-|"$vcidr"|g" ./terraform.tfvars
 fi
+fi
+
 echo ""
 echo "Creating Infrastructure..................."
 sleep 1
