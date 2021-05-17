@@ -1,9 +1,7 @@
-#!/bin/bash 
-
+#!/bin/sh 
 #terrform variable setting through customer input
 echo "#############VPC CREATION THROUGH TERRAFORM##############"
 rm -f ./terraform.tfvars
-
 cat <<EOF >terraform.tfvars
 region 		= "-REGION-"
 access_key 	= "-ACCESSKEY-"
@@ -11,6 +9,7 @@ secret_key 	= "-SECREATKEY-"
 project 	= "-PROJECTNAME-"
 vpc_cidr 	= "-VPCCIDR-"
 EOF
+
 read -p "Please specify your region: " reg 
 if [ -z $reg  ]; then
 echo "No region value entered"
@@ -52,7 +51,10 @@ else
 fi
 
 #Setup Terrafrom under the current working directory
-read -p 'Do you want to install Terraform under the current directory `pwd`. NB: Already installed directory please select NO [y/N]:' con1
+if [[ -d .terraform ]]; then 
+	echo "Terrafrom is already installed"
+else
+read -p 'Do you want to install Terraform on this current directory [y/N]:' con1
 if [[ "$con1" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
 wget https://releases.hashicorp.com/terraform/0.15.3/terraform_0.15.3_linux_amd64.zip
 unzip terraform*.zip 2>/dev/null
@@ -62,6 +64,9 @@ echo "Terraform downloading completed...................."
 sleep 2
 echo "start to connect provider.tf to terraform.........."
 terraform init
+else 
+	echo "Please re-run the script or install terraform"
+fi
 fi
 
 read -p 'Do you need to validate our VPC script with your mentioned values [y/N]:' con2
@@ -72,12 +77,12 @@ sleep 3
 terraform plan
 fi
 
-read -p 'Do you need to apply the script your infrastructure [y/N]:' con3
+read -p 'Do you need to apply the script to your infrastructure [y/N]:' con3
 if [[ "$con3" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
 terraform apply -auto-approve
 sleep 3
 echo "Your VPC is created"
 else
-echo "Please re-run the file"
+echo "Please re-run the file or manualy handled through terraform commands"
 exit
 fi
