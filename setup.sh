@@ -1,7 +1,8 @@
 #!/bin/sh 
 #terrform variable setting through customer input
-echo "#############VPC CREATION THROUGH TERRAFORM##############"
 echo ""
+echo "................Welcome to the Script................"
+echo "Let's start to create VPC through Terraform................"
 echo ""
 rm -f ./terraform.tfvars
 
@@ -53,7 +54,7 @@ else
 	sed -ie "s|-VPCCIDR-|"$vcidr"|g" ./terraform.tfvars
 fi
 
-echo "#..................Creating Infrastructure......................"
+echo "#..................Creating Infrastructure..................."
 echo ""
 #Setup Terrafrom under the current working directory
 if [[ -d .terraform ]]; then 
@@ -91,7 +92,11 @@ if [[ "$con3" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
 terraform apply -auto-approve
 sleep 3
 echo ""
-echo "Your VPC infrastructure completed"
+echo "Your VPC created successfully............"
+echo ""
+echo "................Thank_you................"
+echo "................Yousaf K Hamza................"
+echo "................yousaf.k.hamza@gmail.com................"
 else
 echo "Please re-run the file or manualy handled through terraform commands"
 exit
