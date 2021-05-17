@@ -1,4 +1,4 @@
-# Create a VPC Through Terraform
+# Create a VPC Through Terraform (Fully Automated)
 [![Builds](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 ## Description.
@@ -26,8 +26,12 @@ sh setup.sh
 
 ![alt text](https://i.ibb.co/PWQgQ9Z/vpc-setup.png)
 
+### Used Languages:
+- bash
+- Terraform (iaac)
+
 # Behind the script
-# Terraform Installation and vpc creation Iaac code and explanation :
+# Terraform Installation and vpc creation creation code and explanation :
 If you need to download terraform (Manually), then click here [Terraform](https://www.terraform.io/downloads.html) .
 
 Lets create a file for declaring the variables.This is used to declare the variable and the values are passing through the terrafrom.tfvars file.
