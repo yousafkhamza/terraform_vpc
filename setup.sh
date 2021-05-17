@@ -4,6 +4,10 @@ echo ""
 echo "..................Welcome to the Script.................."
 echo "Let's start to create a complete VPC through Terraform...."
 echo ""
+
+if [[ -d .terraform ]]; then 
+	echo "Provider values are already configured."
+else
 rm -f ./terraform.tfvars
 
 cat <<EOF >terraform.tfvars
@@ -14,9 +18,6 @@ project 	= "-PROJECTNAME-"
 vpc_cidr 	= "-VPCCIDR-"
 EOF
 
-if [[ -d .terraform ]]; then 
-	echo "Provider values are already configured."
-else
 read -p "Please specify your region: " reg 
 if [ -z $reg  ]; then
 echo "No region value entered"
