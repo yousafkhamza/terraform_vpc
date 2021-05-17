@@ -53,42 +53,48 @@ exit 1
 else
 	sed -ie "s|-VPCCIDR-|"$vcidr"|g" ./terraform.tfvars
 fi
-
-echo "#..................Creating Infrastructure..................."
+echo ""
+echo "..................Creating Infrastructure..................."
 echo ""
 #Setup Terrafrom under the current working directory
-if [[ -d .terraform ]]; then 
+if [ -d .terraform ]; then 
 	echo "Terrafrom is already installed"
 else
 read -p 'Do you want to install Terraform on this current directory [y/N]:' con1
-if [[ "$con1" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
+case "$con1" in 
+yes|YES|y|Y)
 wget https://releases.hashicorp.com/terraform/0.15.3/terraform_0.15.3_linux_amd64.zip
 unzip terraform*.zip 2>&1
 mv terraform /usr/bin/
-
+echo ""
 echo "Terraform downloading completed...................."
 echo ""
 sleep 2
 echo "start to connect provider.tf to terraform.........."
 echo ""
 terraform init
-else 
+;;
+*)
 	echo "Please re-run the script or install terraform manually"
-fi
+;; 
+esac
 fi
 
 echo ""
 read -p 'Do you need to validate our VPC script with your mentioned values [y/N]:' con2
-if [[ "$con2" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
+case "$con2" in 
+yes|YES|y|Y)
 terraform validate
 echo "Your current values with -terrafrom plan- result is below:"
 sleep 3
 terraform plan
-fi
+;;
+esac
 
 echo ""
 read -p 'Do you need to apply the script to your infrastructure [y/N]:' con3
-if [[ "$con3" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
+case "$con3" in 
+yes|YES|y|Y)
 terraform apply -auto-approve
 sleep 3
 echo ""
@@ -97,7 +103,9 @@ echo ""
 echo "................Thank_you................"
 echo "................Yousaf K Hamza................"
 echo "................yousaf.k.hamza@gmail.com................"
-else
+;;
+*)
 echo "Please re-run the file or manualy handled through terraform commands"
 exit
-fi
+;;
+esac
