@@ -1,0 +1,5 @@
+region = "your region"
+access_key = "your access_key"
+secret_key = "your secreat_key"
+project = "your project name"
+vpc_cidr = "your vpc cidr"
