@@ -2,16 +2,15 @@
 
 #terrform variable setting through customer input
 echo "#############VPC CREATION THROUGH TERRAFORM##############"
-
 rm -f ./terraform.tfvars
-cat <<EOF > terraform.tfvars
-region = "-REGION-"
-access_key = "-ACCESSKEY-"
-secret_key = "-SECREATKEY-"
-project = "-PROJECTNAME-"
-vpc_cidr = "-VPCCIDR-"
-EOF
 
+cat <<EOF >terraform.tfvars
+region 		= "-REGION-"
+access_key 	= "-ACCESSKEY-"
+secret_key 	= "-SECREATKEY-"
+project 	= "-PROJECTNAME-"
+vpc_cidr 	= "-VPCCIDR-"
+EOF
 read -p "Please specify your region: " reg 
 if [ -z $reg  ]; then
 echo "No region value entered"
