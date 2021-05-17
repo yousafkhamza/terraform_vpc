@@ -3,7 +3,7 @@
 
 ## Description.
 
-It's simply created a VPC through terraform. This terrafrom (iaac) code is used to created 3 private and 3 public subnets and its included a internet gatway for public subnets and a nat gatway for private subnets so these gateways are configured on two public and private route tables also this subnets are attached with cursponding route tables. Also, please note that the code is suitable for AWS. 
+It's simply created a VPC through terraform. This terrafrom (iaac) code is used to created 3 private and 3 public subnets and its included a internet gatway for public subnets and a nat gatway for private subnets so these gateways are configured on public and private route tables also this subnets are attached with cursponding route tables. Also, please note that the code is suitable for AWS Cloud. 
 
 ### Features
 - Fully Automated (included terraform installation)
