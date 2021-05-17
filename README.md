@@ -31,7 +31,9 @@ sh setup.sh
 - Terraform (iaac)
 
 # Behind the script
-# Terraform Installation and vpc creation creation code and explanation :
+# Terraform Installation and VPC creation code and explanation :
+##### please note that you can use the steps to make a vpc through terraform manually
+
 If you need to download terraform (Manually), then click here [Terraform](https://www.terraform.io/downloads.html) .
 
 Lets create a file for declaring the variables.This is used to declare the variable and the values are passing through the terrafrom.tfvars file.
