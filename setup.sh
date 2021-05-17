@@ -9,7 +9,6 @@ secret_key 	= "-SECREATKEY-"
 project 	= "-PROJECTNAME-"
 vpc_cidr 	= "-VPCCIDR-"
 EOF
-
 read -p "Please specify your region: " reg 
 if [ -z $reg  ]; then
 echo "No region value entered"
