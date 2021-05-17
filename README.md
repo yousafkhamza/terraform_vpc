@@ -5,16 +5,16 @@
 
 It's simply created a VPC through terraform. This terrafrom (iaac) code is used to created 3 private and 3 public subnets and its included a internet gatway for public subnets and a nat gatway for private subnets so these gateways are configured on two public and private route tables also this subnets are attached with cursponding route tables. Also, please note that the code is suitable for AWS. 
 
-### Features:
+### Features
 - Fully Automated (included terraform installation)
 - Easy to customise and use.
 - Automated subnet cidr calculation and assigning.
 - Complete VPC setup with gatway's
 - Project name is appended to the resources that are creating.
-### Prerequisites for this project:
+### Prerequisites for this project
 - Need IAM user access with attached policies for the creation of VPC.
 - Knowledge to the working principles of each AWS services especially VPC, EC2 and IP Subnetting.
-### How to use: 
+### How to use
 ```sh
 yum install git -y
 git clone https://github.com/ykhsupport/terraform_vpc.git
@@ -22,11 +22,11 @@ cd terraform_vpc
 chmod +x setup.sh
 sh setup.sh
 ```
-> setup script sample output: 
+> setup script sample output
 
 ![alt text](https://i.ibb.co/PWQgQ9Z/vpc-setup.png)
 
-### Used Languages:
+### Used Languages
 - bash
 - Terraform (iaac)
 
