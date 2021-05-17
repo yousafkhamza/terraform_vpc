@@ -57,6 +57,7 @@ read -p 'Do you want to install Terraform under the current directory `pwd`. NB:
 if [[ "$con1" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
 wget https://releases.hashicorp.com/terraform/0.15.3/terraform_0.15.3_linux_amd64.zip
 unzip terraform*.zip 2>/dev/null
+mv terraform /usr/bin/
 
 echo "Terraform downloading completed...................."
 sleep 2
