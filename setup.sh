@@ -116,7 +116,8 @@ else
 read -p 'Do you want to install Terraform on this current directory [y/N]:' con1
 case "$con1" in 
 yes|YES|y|Y)
-wget https://releases.hashicorp.com/terraform/0.15.3/terraform_0.15.3_linux_amd64.zip
+echo ""
+wget https://releases.hashicorp.com/terraform/0.15.3/terraform_0.15.3_linux_amd64.zip 2>&1
 unzip terraform*.zip 2>&1
 mv terraform /usr/bin/
 rm -f terraform*.zip
