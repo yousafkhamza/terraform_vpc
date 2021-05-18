@@ -1,15 +1,54 @@
 #!/bin/sh 
-#terrform variable setting through customer input
+
 echo ""
 echo "..................Welcome to the Script.................."
 echo "Let's start to create a complete VPC through Terraform...."
 echo ""
 
 if [[ -d .terraform ]]; then 
-	echo "Provider values are already configured."
+echo "Provider and variable values are already configured."
+echo ""
+read -p 'Do you want to reconfigure the variables (Region,VPC_CIDR,ProjectName) file [y/N]:' con4
+case "$con4" in 
+yes|YES|y|Y)
+read -p "Please specify your region: " reconreg 
+if [ -z $reconreg  ]; then
+echo ""
+echo "No region value entered so it will be take the previous value"
+echo ""
+else
+	sed -i '/region/d'		./terraform.tfvars
+	echo 'region 	= "-REGION-"'	>> ./terraform.tfvars
+	sed -i "s/-REGION-/"$reconreg"/" ./terraform.tfvars
+fi
+
+read -p "Please specify your project name: " reconpname 
+if [ -z $reconpname ]; then
+echo ""
+echo "No Project Name entered so it will be take the previous value"
+echo ""
+else
+	sed -i '/project/d'	./terraform.tfvars
+	echo 'project = "-PROJECTNAME-"'	>> ./terraform.tfvars
+	sed -i "s/-PROJECTNAME-/"$reconpname"/" ./terraform.tfvars
+fi
+
+
+read -p "Please specify your vpc_cidr: " reconvcidr 
+if [ -z $reconvcidr ]; then
+echo ""
+echo "No VPC CIDR value entered it will be take the previous value"
+echo ""
+else
+	sed -i '/vpc_cidr/d'	./terraform.tfvars
+	echo 'vpc_cidr 	= "-VPCCIDR-"'	>> ./terraform.tfvars
+	sed -ie "s|-VPCCIDR-|"$reconvcidr"|g" ./terraform.tfvars
+fi
+;;
+esac
+
 else
 rm -f ./terraform.tfvars
-
 cat <<EOF >terraform.tfvars
 region 		= "-REGION-"
 access_key 	= "-ACCESSKEY-"
@@ -44,7 +83,7 @@ fi
 
 read -p "Please specify your project name: " pname 
 if [ -z $pname ]; then
-echo "No ProjectName entered"
+echo "No Project Name entered"
 exit 1
 else 
 	sed -i "s/-PROJECTNAME-/"$pname"/" ./terraform.tfvars
