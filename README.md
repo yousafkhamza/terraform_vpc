@@ -49,7 +49,7 @@ If you need to download terraform (Manually), then click here [Terraform](https:
 ### Prerequisites 
 - Create an IAM user on your AWS console that have access to create the required resources.
 - Create a dedicated directory where you can create terraform configuration files.
-- Install Terraform, click here [Terraform installation](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started)
+- Terraform Installation steps, click here [Terraform installation](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started)
 
 > sample installation steps
 ```sh
