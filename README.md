@@ -11,8 +11,8 @@ We will be making 1 VPC with 6 Subnets: 3 Private and 3 Public, 1 NAT Gateways, 
 ### Features
 - Fully Automated (included terraform installation)
 - Easy to customise and use as the Terraform modules are created using variables,allowing the module to be customized without altering the module's own source code, and allowing modules to be shared between different configurations.
-- Each subnet CIDR block created  automatically using cidrsubnet Function 
-- AWS informations are defined using tfvars file and can easily changed
+- Each subnet CIDR block created  automatically using cidrsubnet Function (Automated)
+- AWS informations are defined using tfvars file and can easily changed (Automated/Manual)
 - Project name is appended to the resources that are creating which will make easier to identify the resources. 
 
 ### Prerequisites for this project
