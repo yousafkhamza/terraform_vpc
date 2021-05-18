@@ -135,7 +135,7 @@ yes|YES|y|Y)
 echo ""
 wget https://releases.hashicorp.com/terraform/0.15.3/terraform_0.15.3_linux_amd64.zip 2>&1
 unzip terraform*.zip 2>&1
-mv terraform /usr/bin/
+mv -f terraform /usr/bin/
 rm -f terraform*.zip
 echo ""
 echo "Terraform downloading completed...................."
