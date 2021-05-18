@@ -1,18 +1,22 @@
-# Create a VPC Through Terraform (Fully Automated)
+# Create a VPC Through Terraform (Fully Automated Script)
 [![Builds](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 ## Description.
 
-It's simply created a VPC through terraform. This terrafrom (iaac) code is used to created 3 private and 3 public subnets and its included a internet gatway for public subnets and a nat gatway for private subnets so these gateways are configured on public and private route tables also this subnets are attached with cursponding route tables. Also, please note that the code is suitable for AWS Cloud. 
+Terraform is a tool for building infrastructure with various technologies including Amazon AWS, Microsoft Azure, Google Cloud, and vSphere.
+
+Here is a simple document on how to use Terraform to build an AWS VPC along with private/public Subnet and Network Gateway's for the VPC. 
+We will be making 1 VPC with 6 Subnets: 3 Private and 3 Public, 1 NAT Gateways, 1 Internet Gateway, and 2 Route Tables.
 
 ### Features
 - Fully Automated (included terraform installation)
-- Easy to customise and use.
-- Automated subnet cidr calculation and assigning.
-- Complete VPC setup with gatway's
-- Project name is appended to the resources that are creating.
+- Easy to customise and use as the Terraform modules are created using variables,allowing the module to be customized without altering the module's own source code, and allowing modules to be shared between different configurations.
+- Each subnet CIDR block created  automatically using cidrsubnet Function 
+- AWS informations are defined using tfvars file and can easily changed
+- Project name is appended to the resources that are creating which will make easier to identify the resources. 
+
 ### Prerequisites for this project
-- Need IAM user access with attached policies for the creation of VPC.
+- Need a IAM user access with attached policies for the creation of VPC.
 - Knowledge to the working principles of each AWS services especially VPC, EC2 and IP Subnetting.
 ### How to use
 ```sh
@@ -41,6 +45,23 @@ sh setup.sh
 > ##### please note that you can use the below steps to make a vpc through terraform (_Manually_).
 
 If you need to download terraform (Manually), then click here [Terraform](https://www.terraform.io/downloads.html) .
+
+### Prerequisites 
+- Create an IAM user on your AWS console that have access to create the required resources.
+- Create a dedicated directory where you can create terraform configuration files.
+- Install Terraform, click here [Terraform installation](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started)
+
+> sample installation steps
+```sh
+wget https://releases.hashicorp.com/terraform/0.15.3/terraform_0.15.3_linux_amd64.zip
+unzip terraform_0.15.3_linux_amd64.zip 
+ls -l
+-rwxr-xr-x 1 root root 79991413 May  6 18:03 terraform  <<=======
+-rw-r--r-- 1 root root 32743141 May  6 18:50 terraform_0.15.3_linux_amd64.zip
+mv terraform /usr/bin/
+which terraform 
+/usr/bin/terraform
+```
 
 Lets create a file for declaring the variables.This is used to declare the variable and the values are passing through the terrafrom.tfvars file.
 
