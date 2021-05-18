@@ -23,10 +23,12 @@ chmod +x setup.sh
 sh setup.sh
 ```
 > setup.sh script sample screenshots
-
-- ![alt text](https://i.ibb.co/r6Gg9Yk/1.png)
-- ![alt text](https://i.ibb.co/MVbwqCt/2.png)
-- ![alt text](https://i.ibb.co/QfTh64q/3.png)
+- 
+![alt text](https://i.ibb.co/r6Gg9Yk/1.png)
+- 
+![alt text](https://i.ibb.co/MVbwqCt/2.png)
+- 
+![alt text](https://i.ibb.co/QfTh64q/3.png)
 
 ### Used Languages
 - bash
