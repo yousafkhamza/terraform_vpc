@@ -1,5 +1,10 @@
 #!/bin/sh 
 
+banner() {
+cat .banner.txt
+printf "\e[1;77m\e[45m  VPC Through Terrafrom Script v1 Author: @ykhsupport (Github)   \e[0m\n"
+}
+
 echo ""
 echo "..................Welcome to the Script.................."
 echo "Let's start to create a complete VPC through Terraform...."
