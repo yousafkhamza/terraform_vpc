@@ -8,7 +8,7 @@ echo ""
 if [[ -d .terraform ]]; then 
 echo "Provider and variable values are already configured."
 echo ""
-read -p 'Do you want to reconfigure the variables (Region,VPC_CIDR,ProjectName) file [y/N]:' con4
+read -p 'Do you want to reconfigure the variables (Region,VPC_CIDR,ProjectName) file [y/N]: ' con4
 case "$con4" in 
 yes|YES|y|Y)
 read -p "Please specify your region: " reconreg 
@@ -113,7 +113,7 @@ if [[ -d .terraform ]]; then
 	echo ""
 	echo "Terrafrom is already installed"
 else
-read -p 'Do you want to install Terraform on this current directory [y/N]:' con1
+read -p 'Do you want to install Terraform on this current directory [y/N]: ' con1
 case "$con1" in 
 yes|YES|y|Y)
 echo ""
@@ -138,7 +138,7 @@ esac
 fi
 
 echo ""
-read -p 'Do you need to run terraform validate with your mentioned values [y/N]:' con2
+read -p 'Do you need to run terraform validate/result preview with your mentioned values [y/N]: ' con2
 case "$con2" in 
 yes|YES|y|Y)
 terraform validate
@@ -153,7 +153,7 @@ terraform plan
 esac
 
 echo ""
-read -p 'Do you need to apply the values to your infrastructure [y/N]:' con3
+read -p 'Do you need to apply the values to your infrastructure [y/N]: ' con3
 case "$con3" in 
 yes|YES|y|Y)
 terraform apply -auto-approve
