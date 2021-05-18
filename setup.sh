@@ -138,7 +138,7 @@ esac
 fi
 
 echo ""
-read -p 'Do you need to run terraform validate/result preview with your mentioned values [y/N]: ' con2
+read -p 'Do you need to run terraform validate/preview with your mentioned values [y/N]: ' con2
 case "$con2" in 
 yes|YES|y|Y)
 terraform validate
