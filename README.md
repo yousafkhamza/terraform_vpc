@@ -24,10 +24,12 @@ sh setup.sh
 ```
 > setup.sh script sample screenshots
 - _Screenshot 1_
-![alt text](https://i.ibb.co/QNgTkT6/1.jpg)
+![alt text](https://i.ibb.co/s571hh7/run.png)
 - _Screenshot 2_
-![alt text](https://i.ibb.co/MVbwqCt/2.png)
+![alt text](https://i.ibb.co/zFTSxP4/1.jpg)
 - _Screenshot 3_
+![alt text](https://i.ibb.co/MVbwqCt/2.png)
+- _Screenshot 4_
 ![alt text](https://i.ibb.co/QfTh64q/3.png)
 
 ### Used Languages
