@@ -24,7 +24,7 @@ sh setup.sh
 ```
 > setup.sh script sample screenshots
 - _Screenshot 1_
-![alt text](https://i.ibb.co/r6Gg9Yk/1.png)
+![alt text](https://i.ibb.co/QNgTkT6/1.jpg)
 - _Screenshot 2_
 ![alt text](https://i.ibb.co/MVbwqCt/2.png)
 - _Screenshot 3_
