@@ -31,7 +31,7 @@ sh setup.sh
 ![alt text](https://i.ibb.co/QfTh64q/3.png)
 
 ### Used Languages
-- bash (scripting)
+- Bash (scripting)
 - Terraform (iaac)
 
 # Behind the script
