@@ -12,8 +12,9 @@ printf "\e[1;92m                    | |   | '__/ _ \/ _' | __| |/ _ \| '_ \     
 printf "\e[1;92m                    | |___| | |  __/ (_| | |_| | (_) | | | |                 \e[0m\n"
 printf "\e[1;92m                     \____|_|  \___|\__,_|\__|_|\___/|_| |_|                 \e[0m\n"
 printf "\n"
-printf "\e[1;77m\e[45m        VPC Through Terrafrom Script v1 Author: @ykhsupport (Github)   \e[0m\n"
+printf "\e[1;77m\e[45m      VPC Through Terrafrom Script v1 Author: @ykhsupport (Github)     \e[0m\n"
 printf "\n"
+
 
 echo ""
 echo "..................Welcome to the Script.................."
